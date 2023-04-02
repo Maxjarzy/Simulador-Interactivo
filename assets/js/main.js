@@ -4,7 +4,6 @@ let montoTresCuotas = 0;
 let montoSeisCuotas = 0;
 let montoDoceCuotas = 0;
 let gastosTotales = [];
-//var nuevoGasto;
 let subtitulo = "0";
 const datosFormulario = document.querySelector('.formularioIngreso');
 
@@ -17,7 +16,7 @@ class gastoNuevo {
         
     }
     getCuota(){
-        return this.importe/ this.cantidadCuotas;
+        return (this.importe/ this.cantidadCuotas);
     }
 }
 
@@ -59,7 +58,6 @@ function validar(evt){
         const compra = new gastoNuevo(donde, cantidad, cuotas, cuando);
 
         const tabla = document.querySelector('.tablaBody');
-
     if(typeof(compra) != undefined){
         const tablaEncabeza = document.querySelector('thead');
         tablaEncabeza.className = "mostrar";
@@ -86,32 +84,32 @@ function validar(evt){
             break;
         case 2:
             crearTR();
-            montoUnaCuota += compra.getCuota().toFixed(2);
-            montoDosCuotas += compra.getCuota().toFixed(2);   
+            montoUnaCuota += parseFloat(compra.getCuota().toFixed(2));
+            montoDosCuotas += parseFloat(compra.getCuota().toFixed(2)); 
             gastosTotales.push(compra);
             break;
         case 3:
             crearTR();
-            montoUnaCuota += compra.getCuota().toFixed(2);
-            montoDosCuotas += compra.getCuota().toFixed(2);   
-            montoTresCuotas += compra.getCuota().toFixed(2);   
+            montoUnaCuota += parseFloat(compra.getCuota().toFixed(2));
+            montoDosCuotas += parseFloat(compra.getCuota().toFixed(2));   
+            montoTresCuotas += parseFloat(compra.getCuota().toFixed(2));   
             gastosTotales.push(compra);
             break;
         case 6:
             crearTR();
-            montoUnaCuota += compra.getCuota().toFixed(2);
-            montoDosCuotas += compra.getCuota().toFixed(2);   
-            montoTresCuotas += compra.getCuota().toFixed(2); 
-            montoSeisCuotas += compra.getCuota().toFixed(2);
+            montoUnaCuota += parseFloat(compra.getCuota().toFixed(2));
+            montoDosCuotas += parseFloat(compra.getCuota().toFixed(2));   
+            montoTresCuotas += parseFloat(compra.getCuota().toFixed(2)); 
+            montoSeisCuotas += parseFloat(compra.getCuota().toFixed(2));
             gastosTotales.push(compra);
             break;
         case 12:
             crearTR();
-            montoUnaCuota += compra.getCuota().toFixed(2);
-            montoDosCuotas += compra.getCuota().toFixed(2);   
-            montoTresCuotas += compra.getCuota().toFixed(2); 
-            montoSeisCuotas += compra.getCuota().toFixed(2);
-            montoDoceCuotas += compra.getCuota().toFixed(2);
+            montoUnaCuota += parseFloat(compra.getCuota().toFixed(2));
+            montoDosCuotas += parseFloat(compra.getCuota().toFixed(2));   
+            montoTresCuotas += parseFloat(compra.getCuota().toFixed(2)); 
+            montoSeisCuotas += parseFloat(compra.getCuota().toFixed(2));
+            montoDoceCuotas += parseFloat(compra.getCuota().toFixed(2));
             gastosTotales.push(compra);
             break;         
     }
@@ -127,7 +125,6 @@ boton.addEventListener('click', imprimirCompras);
 
 function imprimirCard(gasto){
      nuevoGasto = document.createElement('div');
-                console.log(gasto)
                 nuevoGasto.className = "card";
                 nuevoGasto.style.width="18rem";
                 nuevoGasto.innerHTML = `
@@ -148,11 +145,11 @@ function imprimirCompras(){
             let gastosDetalle = document.querySelector('#gastosDetalle');
             let contenidoDetalle = document.createElement('ul');
                 contenidoDetalle.innerHTML=     `
-                                                    <li><h3>La primer cuota va a ser:$ ${montoUnaCuota}</h3></li>                
-                                                    <li><h3>La segunda cuota va a ser:$ ${montoDosCuotas}</h3></li>
-                                                    <li><h3>La primer cuota va a ser:$ ${montoTresCuotas}</h3></li> 
-                                                    <li><h3>La primer cuota va a ser:$ ${montoSeisCuotas}</h3></li> 
-                                                    <li><h3>La primer cuota va a ser:$ ${montoDoceCuotas}</h3></li>
+                                                    <li><h3>El primer mes vas a pagar:$${montoUnaCuota}</h3></li>                
+                                                    <li><h3>El segundo mes vas a pagar:$${montoDosCuotas}</h3></li>
+                                                    <li><h3>El tercer mes vas a pagar:$${montoTresCuotas}</h3></li> 
+                                                    <li><h3>Del cuarto al sexto mes vas a pagar:$${montoSeisCuotas}</h3></li> 
+                                                    <li><h3>Del séptimo al decimosegundo mes vas a pagar:$${montoDoceCuotas}</h3></li>
                                                 `
                 gastosDetalle.appendChild(contenidoDetalle)
                 gastosDetalle.innerHTML = "";
