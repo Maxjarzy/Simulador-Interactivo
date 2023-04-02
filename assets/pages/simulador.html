@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Trabajo final: Simulador Interactivo</title>
 </head>
 <body>
     <header>
@@ -21,7 +21,7 @@
                 <div class="navbar-nav">
                   <a class="nav-link" aria-current="page" href="../../index.html">Home</a>
                   <a class="nav-link" href="#">Nosotros</a>
-                  <a class="nav-link" href="assets/pages/simulador.html">Nuestro simulador</a>
+                  <a class="nav-link" href="./simulador.html">Nuestro simulador</a>
                 </div>
               </div>
             </div>
@@ -35,32 +35,35 @@
 
         <div class="contenedorForm">
     
-            <p class="contenedorForm__parrafo">
-               Ingresá en el formulario los datos de tus gasto y ve cómo sucede la magia.
-            </p>
+            <div class="contenedorForm__contenedor">
+              <p class="contenedorForm__parrafo">
+                Ingresá en el formulario los datos de tus gasto y ve cómo sucede la magia.
+              </p>
+              <img src="/assets/images/mujerCalculando.avif" alt="señora calculando" class="imagenSeñora">
+            </div>
     
             <form class="formularioIngreso">
     
                 
                   <label for="formDonde">¿Dónde se realizó la compra?</label>
-                  <input type="text" id="formDonde" value="" required>
+                  <input type="text" id="formDonde" value="" >
 
                   <label for="formCantidad">Importe de la compra</label>
-                  <input type="number" id="formCantidad" value="" min="0" required>
+                  <input type="number" id="formCantidad" value="" step="0.01" >
 
                 <fieldset>
                   <label>Cantidad de cuotas</label>
-                  <input type="radio" name="cuotas" id="formCuotas" class="fieldsetInput" value="1" checked required>1
-                  <input type="radio" name="cuotas" id="formCuotas" class="fieldsetInput" value="2" required>2
-                  <input type="radio" name="cuotas" id="formCuotas" class="fieldsetInput" value="3" required>3
-                  <input type="radio" name="cuotas" id="formCuotas" class="fieldsetInput" value="6" required>6
-                  <input type="radio" name="cuotas" id="formCuotas" class="fieldsetInput" value="12" required>12
+                  <input type="radio" name="cuotas" id="formCuotas" class="fieldsetInput" value="1" checked >1
+                  <input type="radio" name="cuotas" id="formCuotas" class="fieldsetInput" value="2" >2
+                  <input type="radio" name="cuotas" id="formCuotas" class="fieldsetInput" value="3" >3
+                  <input type="radio" name="cuotas" id="formCuotas" class="fieldsetInput" value="6" >6
+                  <input type="radio" name="cuotas" id="formCuotas" class="fieldsetInput" value="12" >12
                 </fieldset>
                 
                 
 
                   <label for="formCuotas">¿Cuándo se hizo la compra?</label>
-                  <input type="date" id="formCuando" value="" required>
+                  <input type="date" id="formCuando" value="" >
               
                 <input type="submit" value="Cargar compra" class="formBoton">
             </form>
@@ -81,9 +84,13 @@
 
         <button id="botonDescripcion" class="detallesBoton formBoton ">Ver organizado</button>
         <div class="gastos">
+          <div id="gastosDetalle">
+
+          </div>
             <div>
               <h2 class="tituloSecciones ocultar" id="tituloUno">Gastos una cuota</h2>
               <div id="seccionUnaCuota">
+
               </div>
             </div>
             <div >
@@ -128,7 +135,8 @@
     </footer>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
